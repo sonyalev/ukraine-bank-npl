@@ -12,7 +12,6 @@ st.title(' Аналіз якості активів та покриття кре
 
 
 # 2. Завантаження даних із кешуванням
-@st.cache_data
 def load_data():
     df = pd.read_csv('data_ready_for_charts.csv')
     df['Report_Date'] = pd.to_datetime(df['Report_Date']).dt.strftime(

@@ -116,6 +116,7 @@ with tab_main:
                 y=monthly_data['Працюючий'],
                 name='Працюючі',
                 marker_color='#2ca02c',
+                hovertemplate='<b>Працюючі</b>: %{y:,.0f} тис. грн<extra></extra>',
             )
         )
         fig_bar.add_trace(
@@ -124,6 +125,7 @@ with tab_main:
                 y=monthly_data['Непрацюючий (NPL)'],
                 name='Непрацюючі (NPL)',
                 marker_color='#d62728',
+                hovertemplate='<b>Непрацюючі (NPL)</b>: %{y:,.0f} тис. грн<extra></extra>',
             )
         )
         fig_bar.update_layout(
@@ -144,7 +146,8 @@ with tab_main:
             markers=True,
         )
         fig_line.update_traces(
-            line_color='#d62728', line_width=3, marker_size=8
+            line_color='#d62728', line_width=3, marker_size=8,
+            hovertemplate='<b>Частка NPL</b>: %{y:.2f}%<extra></extra>',
         )
         fig_line.update_layout(
             xaxis_title='Дата звітності', yaxis_title='% NPL', hovermode='x'
